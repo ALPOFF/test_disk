@@ -13,14 +13,15 @@ class DataDisk extends React.Component {
 
 
     render() {
-
+        const { match, location, history } = this.props;
         return <div>
+            <div>You are now at {location.pathname}</div>
             {
                 this.props.users.map(u => <div key={u.id}>
                     <span>
                         <div>
                             {u.type === "dir"
-                            ? <NavLink to={ this.props.location.pathname.substring(1) + '/' + u.name}>FOLDER-{u.name}</NavLink>
+                            ? <NavLink to={  '/' + u.name}>FOLDER-{u.name}</NavLink>
                             : u.name
                         }
                         </div>
