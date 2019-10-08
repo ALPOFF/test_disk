@@ -1,33 +1,22 @@
 import React from "react";
-import * as axios from "axios";
-import {Link, NavLink} from "react-router-dom";
-import {BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
-
-
+import {Link} from "react-router-dom";
+import styles from "./DataDisk.module.css"
 
 class DataDisk extends React.Component {
 
-    /*   constructor(props) {
-           super(props); //если только это то не пишем
-       }*/
-
-
-
     render() {
-
-        const { match, location, history } = this.props;
         return <div>
-
-            {this.props.location.pathname}
             {
-                this.props.profile.map(u => <div key={u.id}>
+                this.props.profile.map(u => <div className={styles.item} key={u.id}>
                     <span>
                         <div>
                             {u.type === "dir"
                             ? <Link to={ u.path.substring(5) }>
                                         <img src="https://opengameart.org/sites/default/files/Flat%20Folder%20icon.png" alt="" height={15}/>
                                     {u.name}</Link>
-                            : u.name
+                            : <div>
+                                    <img src="https://cdn3.iconfinder.com/data/icons/brands-applications/512/File-512.png" alt="" height={15}/>
+                                    {u.name}</div>
                         }
                         </div>
                     </span>

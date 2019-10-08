@@ -25,12 +25,10 @@ class DataDiskContainer extends React.Component{
     }
 
     render() {
-        debugger
         const { match, location, history } = this.props;
-
         return (
             <div>
-                <div>You are now at {location.pathname}</div>
+                <div>Вы находитесь: {location.pathname}</div>
                 <DataDisk {...this.props} profile={this.props.profile} key={this.props.location.pathname}/>
             </div>
         )
