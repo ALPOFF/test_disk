@@ -11,10 +11,10 @@ let initialState = {
         {id: 2, photoUrl:'http://propsyteen.ru/wp-content/themes/siteseed/css/boy0.png', followed: true, fullName: 'Ivan', status: 'Hello World', location: {city: 'Spb', country: 'Russia'}},
         {id: 3, photoUrl:'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png', followed: false, fullName: 'Svetlana', status: 'Sunshine', location: {city: 'Minsk', country: 'Belarus'}},*/
     ],
-    profile: null
+    profile: []
 }
 
-const diskdata = (state = initialState, action) => {
+const diskdataReducer = (state = initialState, action) => {
     switch (action.type) {
         case FOLLOW:
             return {
@@ -54,4 +54,4 @@ const diskdata = (state = initialState, action) => {
 
 
 
-export default diskdata;
+export default diskdataReducer;

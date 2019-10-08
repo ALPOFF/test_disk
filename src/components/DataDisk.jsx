@@ -1,6 +1,7 @@
 import React from "react";
 import * as axios from "axios";
 import {Link, NavLink} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
 
 
 
@@ -15,13 +16,13 @@ class DataDisk extends React.Component {
     render() {
         const { match, location, history } = this.props;
         return <div>
-            <div>You are now at {location.pathname}</div>
+            {this.props.location.pathname}
             {
-                this.props.users.map(u => <div key={u.id}>
+                this.props.profile.map(u => <div key={u.id}>
                     <span>
                         <div>
                             {u.type === "dir"
-                            ? <NavLink to={  '/' + u.name}>FOLDER-{u.name}</NavLink>
+                            ? <Link to={  '/' + u.name}>FOLDER-{u.name}</Link>
                             : u.name
                         }
                         </div>

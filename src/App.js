@@ -1,20 +1,15 @@
 import React from 'react';
 import DataDiskContainer from "./components/DataDiskContainer";
-import {Route,Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
 
-const App = () => {
-
+const App = ({location}) => {
+debugger
     return (
-        <div className="App">
             <div>
-                <h1>dfdf</h1>
-
-                <Route path='/:fldpath?'
-                       render={ () => <DataDiskContainer /> }/>
-
+                <h3>YFM</h3>
+                <Route path="/:fldpath?" component={DataDiskContainer} key={location.pathname} />;
             </div>
-        </div>
     );
 }
 
-export default App;
+export default withRouter(App);
