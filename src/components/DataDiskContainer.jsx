@@ -25,6 +25,7 @@ class DataDiskContainer extends React.Component{
     }
 
     render() {
+        debugger
         const { match, location, history } = this.props;
 
         return (

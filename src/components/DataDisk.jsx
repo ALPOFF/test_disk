@@ -14,15 +14,19 @@ class DataDisk extends React.Component {
 
 
     render() {
+
         const { match, location, history } = this.props;
         return <div>
+
             {this.props.location.pathname}
             {
                 this.props.profile.map(u => <div key={u.id}>
                     <span>
                         <div>
                             {u.type === "dir"
-                            ? <Link to={  '/' + u.name}>FOLDER-{u.name}</Link>
+                            ? <Link to={ u.path.substring(5) }>
+                                        <img src="https://opengameart.org/sites/default/files/Flat%20Folder%20icon.png" alt="" height={15}/>
+                                    {u.name}</Link>
                             : u.name
                         }
                         </div>
