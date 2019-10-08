@@ -28,10 +28,11 @@ let mapDispatchToProps = (dispatch) => {
 class DataDiskContainer extends React.Component{
 
     componentDidMount() {
-
-        let fldpath = this.props.match.params.fldpath;
+        let fldpath = this.props.location.pathname.substring(1);
         axios.get('https://cloud-api.yandex.net/v1/disk/resources?path=/' + fldpath, {headers: {Authorization: 'OAuth AgAAAAAzg5r5AAXoL7C1lxEDHEHuq7g1PyL4_ls\n'}}).then(response => {
             this.props.setUsers(response.data._embedded.items);
+            console.log(response.data._embedded)
+
         });
     }
 
