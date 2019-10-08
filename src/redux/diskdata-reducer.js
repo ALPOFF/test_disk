@@ -1,6 +1,9 @@
-const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
-const SET_USERS = 'SET_USERS';
+import {FOLLOW} from './actions'
+import {UNFOLLOW} from './actions'
+import {SET_USERS} from './actions'
+import {SET_FLDPATH} from './actions'
+
+
 
 let initialState = {
     users: [
@@ -8,6 +11,7 @@ let initialState = {
         {id: 2, photoUrl:'http://propsyteen.ru/wp-content/themes/siteseed/css/boy0.png', followed: true, fullName: 'Ivan', status: 'Hello World', location: {city: 'Spb', country: 'Russia'}},
         {id: 3, photoUrl:'https://cdn1.iconfinder.com/data/icons/user-pictures/100/female1-512.png', followed: false, fullName: 'Svetlana', status: 'Sunshine', location: {city: 'Minsk', country: 'Belarus'}},*/
     ],
+    profile: null
 }
 
 const diskdata = (state = initialState, action) => {
@@ -38,31 +42,16 @@ const diskdata = (state = initialState, action) => {
             return {...state, users: [...state.users, ...action.users]}
 
         }
+        case SET_FLDPATH: {
+            return {...state, profile: action.profile}
+
+        }
         default:
             return state;
     }
 
 }
 
-export const followAC = (userId) => {
-    return {
-        type: FOLLOW,
-        userId
-    }
-}
 
-export const unfollowAC = (userId) => {
-    return {
-        type: UNFOLLOW,
-        userId
-    }
-}
-
-export const setUsersAC = (users) => { // set old to new
-    return {
-        type: SET_USERS,
-        users
-    }
-}
 
 export default diskdata;

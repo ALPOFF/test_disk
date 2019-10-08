@@ -1,5 +1,8 @@
 import React from "react";
 import * as axios from "axios";
+import {Link, NavLink} from "react-router-dom";
+
+
 
 class DataDisk extends React.Component {
 
@@ -7,12 +10,7 @@ class DataDisk extends React.Component {
            super(props); //если только это то не пишем
        }*/
 
-    componentDidMount() {
-        axios.get("https://cloud-api.yandex.net/v1/disk/resources?path=%2F", { headers: { Authorization: 'OAuth AgAAAAAzg5r5AAXoL7C1lxEDHEHuq7g1PyL4_ls\n' }}).then(response => {
-            this.props.setUsers(response.data._embedded.items);
-            console.log(response.data._embedded)
-        });
-    }
+
 
     render() {
         return <div>
@@ -21,7 +19,7 @@ class DataDisk extends React.Component {
                     <span>
                         <div>
                             {u.type === "dir"
-                            ? "FOLDER - "+u.name
+                            ? <NavLink to={ `/` + u.name}>FOLDER-{u.name}</NavLink>
                             : u.name
                         }
                         </div>

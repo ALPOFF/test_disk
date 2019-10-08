@@ -1,21 +1,15 @@
 import React from 'react';
 import DataDiskContainer from "./components/DataDiskContainer";
+import {Route} from "react-router-dom";
 
-//import './App.css';
-
-function App(props) {
-
-    let getLink = () => {
-        alert(1)
-    }
+const App = () => {
 
     return (
         <div className="App">
             <div>
-                <h4>Вставьте ссылку на диск</h4>
-                <input type="text" />
-                <button onClick={getLink}>View</button>
-                <DataDiskContainer />
+                <h1>dfdf</h1>
+                <Route path='/:fldpath?'
+                       render={ () => <DataDiskContainer /> }/>
             </div>
         </div>
     );

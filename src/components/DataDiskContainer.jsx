@@ -1,7 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
-import {followAC, setUsersAC, unfollowAC} from "./../redux/diskdata-reducer";
+import {followAC, setUsersAC, unfollowAC} from "./../redux/actions";
 import DataDisk from "./DataDisk";
+import * as axios from "axios";
+import {withRouter} from "react-router-dom";
 
 let mapStateToProps = (state) => {
     return {
@@ -23,4 +25,25 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DataDisk);
+class DataDiskContainer extends React.Component{
+
+    componentDidMount() {
+
+        let fldpath = this.props.match.params.fldpath;
+        axios.get('https://cloud-api.yandex.net/v1/disk/resources?path=/' + fldpath, {headers: {Authorization: 'OAuth AgAAAAAzg5r5AAXoL7C1lxEDHEHuq7g1PyL4_ls\n'}}).then(response => {
+            this.props.setUsers(response.data._embedded.items);
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <DataDisk {...this.props}/>
+            </div>
+        )
+    }
+}
+
+let WithUrlDataContainerComponent = withRouter(DataDiskContainer);
+
+export default connect(mapStateToProps, mapDispatchToProps)(WithUrlDataContainerComponent);
