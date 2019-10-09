@@ -10,7 +10,9 @@
 <h2>Скопируйте ваш OAuth-token в следующую директорию: test_disk/src/token_value.js в переменную token_value</h2>
 <h2>npm install</h2>
 <h2>npm start</h2>
-
+<hr>
+<br/>
+<br/>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
