@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import {follow, setFldPath, setUsers, unfollow} from "./../redux/actions";
 import DataDisk from "./DataDisk";
 import * as axios from "axios";
-import {withRouter} from "react-router-dom";
+import {Link, NavLink, withRouter} from "react-router-dom";
 import PropTypes from "prop-types";
 
 class DataDiskContainer extends React.Component{
@@ -29,6 +29,7 @@ class DataDiskContainer extends React.Component{
         return (
             <div>
                 <div>Вы находитесь: {location.pathname}</div>
+                <div><Link to= {location.pathname.replace(this.props.match.url, '')}><h4>...</h4></Link></div>
                 <DataDisk {...this.props} profile={this.props.profile} key={this.props.location.pathname}/>
             </div>
         )
