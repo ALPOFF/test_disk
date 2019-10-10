@@ -1,6 +1,6 @@
 import React from 'react';
 import DataDiskContainer from "./components/DataDiskContainer";
-import {BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row} from "react-bootstrap";
 

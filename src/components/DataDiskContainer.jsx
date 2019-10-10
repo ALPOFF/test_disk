@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from "react-redux";
-import {follow, setFldPath, setUsers, unfollow} from "./../redux/actions";
+import {setFldPath} from "./../redux/actions";
 import DataDisk from "./DataDisk";
 import * as axios from "axios";
-import {Link, NavLink, withRouter} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import PropTypes from "prop-types";
 import {token_value} from "./../token_value"
 
@@ -31,7 +31,7 @@ class DataDiskContainer extends React.Component{
             <div>
                 <div>Вы находитесь: {location.pathname}</div>
                 <div><Link to= {location.pathname.replace(this.props.match.url, '')}><h4>...</h4></Link></div>
-                <DataDisk {...this.props} profile={this.props.profile} key={this.props.location.pathname}/>
+                <DataDisk {...this.props} profile={this.props.data} key={this.props.location.pathname}/>
             </div>
         )
     }
@@ -39,16 +39,10 @@ class DataDiskContainer extends React.Component{
 
 let mapStateToProps = (state) => {
     return {
-        profile: state.diskdata.profile
+        data: state.diskdata.data
     }
 }
 
-
 let WithUrlDataContainerComponent = withRouter(DataDiskContainer);
 
-export default connect(mapStateToProps, {
-    follow,
-    unfollow,
-    setUsers,
-    setFldPath
-    })(WithUrlDataContainerComponent);
+export default connect(mapStateToProps, {setFldPath})(WithUrlDataContainerComponent);
