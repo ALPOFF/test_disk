@@ -7,7 +7,7 @@
 <hr>
 <h2>Получите ваш OAuth-token <a href="https://oauth.yandex.ru/authorize?response_type=token&client_id=22db2a66487e408981acd75444951a44
 ">ЗДЕСЬ</a></h2>
-<h2>Скопируйте ваш OAuth-token в следующую директорию: test_disk/src/token_value.js в переменную token_value</h2>
+<h2>Скопируйте ваш OAuth-token в следующий файл: test_disk/src/token_value.js в переменную token_value</h2>
 <h2>npm install</h2>
 <h2>npm start</h2>
 <hr>
