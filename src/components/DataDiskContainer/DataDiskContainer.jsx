@@ -1,13 +1,14 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setFldPath} from "./../redux/actions";
-import DataDisk from "./DataDisk";
+import {setFldPath} from "../../redux/actions";
+import DataDisk from "../DataDisk/DataDisk";
 import * as axios from "axios";
 import {Link, withRouter} from "react-router-dom";
 import PropTypes from "prop-types";
-import {token_value} from "./../token_value"
+import {token_value} from "../../token_value"
+import {Col} from "react-bootstrap";
 
-class DataDiskContainer extends React.Component{
+class DataDiskContainer extends React.Component {
 
     static propTypes = {
         match: PropTypes.object.isRequired,
@@ -26,12 +27,13 @@ class DataDiskContainer extends React.Component{
     }
 
     render() {
-        debugger
-        const { match, location, history } = this.props;
+        const {match, location, history} = this.props;
         return (
             <div>
-                <div>Вы находитесь: {location.pathname}</div>
-                <div><Link to= {location.pathname.slice(0, location.pathname.lastIndexOf("/"))}><h4>...</h4></Link></div>
+                <div className="pl-2">
+                    <h4>Вы находитесь: {location.pathname}</h4>
+                    <Link to={location.pathname.slice(0, location.pathname.lastIndexOf("/"))}><h4>...</h4></Link>
+                </div>
                 <DataDisk {...this.props} profile={this.props.data} key={this.props.location.pathname}/>
             </div>
         )
