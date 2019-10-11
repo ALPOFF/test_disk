@@ -11,7 +11,7 @@ class DataDiskContainer extends React.Component {
 
     componentDidMount() {
         let fldpath = this.props.location.pathname.substring(1);
-        axios.get('https://cloud-api.yandex.net/v1/disk/resources?path=/' + fldpath, {headers: {Authorization: token_value}}).then(response => {
+        axios.get('https://cloud-api.yandex.net/v1/disk/resources?path=/' + fldpath, {headers: {Authorization: 'OAuth '+token_value}}).then(response => {
             this.props.setFldPath(response.data._embedded.items);
             console.log(response.data._embedded)
 

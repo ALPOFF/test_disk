@@ -1,2 +1,2 @@
-const token_value = 'OAuth AgAAAAAzg5r5AAXoL7C1lxEDHEHuq7g1PyL4_ls'; //OAuth-token HERE
+const token_value = 'put OAuth-token here';
 export {token_value};
