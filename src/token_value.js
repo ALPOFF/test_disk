@@ -1,2 +1,3 @@
-const token_value = 'put OAuth-token here';
+const token_value = '';
+//const token_value = 'DfdsfSF_dfsFSdf_dffsdfd'; Example
 export {token_value};
