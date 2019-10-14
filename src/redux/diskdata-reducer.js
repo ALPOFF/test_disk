@@ -1,4 +1,5 @@
 import {SET_FLDPATH} from './actions'
+import {diskAPI} from "../components/api/api";
 
 let initialState = {
     data: []
@@ -12,7 +13,6 @@ const diskdataReducer = (state = initialState, action) => {
         default:
             return state;
     }
-
 }
 
 export default diskdataReducer;
