@@ -1,5 +1,4 @@
 import {SET_FLDPATH} from './actions'
-import {diskAPI} from "../components/api/api";
 
 let initialState = {
     data: []

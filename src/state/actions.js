@@ -1,4 +1,4 @@
-export const SET_FLDPATH = 'SET_FLDPATH';
+export const SET_FLDPATH = 'diskdata/SET_FLDPATH';
 
 export const setFldPath = (data) => {
     return {

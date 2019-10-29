@@ -9,7 +9,7 @@ class DataDisk extends React.Component {
                 <div className="list-group">
                     {
                         this.props.data.map(u =>
-                            <div className={styles.items} key={u.id}>
+                            <div className={styles.items} key={u.resource_id}>
                                 {u.type === "dir"
                                     ? <Link className="list-group-item list-group-item-action" to={u.path.substring(5)}>
                                         <img src="https://opengameart.org/sites/default/files/Flat%20Folder%20icon.png"

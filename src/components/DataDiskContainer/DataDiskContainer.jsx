@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {setFldPath} from "../../redux/actions";
+import {setFldPath} from "../../state/actions";
 import DataDisk from "../DataDisk/DataDisk";
 import {withRouter} from "react-router-dom";
 import Navbar from "../Navbar/Navbar";

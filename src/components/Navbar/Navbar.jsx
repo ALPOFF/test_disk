@@ -14,9 +14,7 @@ class Navbar extends React.Component {
             }
             pth = pth.substring(0, index);
         }
-
         items.unshift({pth_name: 'Home', pth: '/'});
-
         return items;
     }
 
@@ -26,9 +24,9 @@ class Navbar extends React.Component {
             <nav aria-label="breadcrumb">
                 <ol className="breadcrumb">
                     {items_arr.map((it, i) => (items_arr.length === i + 1) ?
-                        <li className="breadcrumb-item active" aria-current="page">{it.pth_name}</li>
+                        <li className="breadcrumb-item active" aria-current="page" key={it.pth_name}>{it.pth_name}</li>
                         :
-                        <Link class="breadcrumb-item" to={it.pth}>{it.pth_name}</Link>
+                        <Link className="breadcrumb-item" key={it.pth_name} to={it.pth}>{it.pth_name}</Link>
                     )}
                 </ol>
             </nav>
