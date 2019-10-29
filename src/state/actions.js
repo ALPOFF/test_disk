@@ -5,4 +5,4 @@ export const setFldPath = (data) => {
         type: SET_FLDPATH,
         data
     }
-}
+};

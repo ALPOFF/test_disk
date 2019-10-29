@@ -2,7 +2,7 @@ import {SET_FLDPATH} from './actions'
 
 let initialState = {
     data: []
-}
+};
 
 const diskdataReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -12,6 +12,6 @@ const diskdataReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}
+};
 
 export default diskdataReducer;

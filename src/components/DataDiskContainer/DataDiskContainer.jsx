@@ -16,7 +16,6 @@ class DataDiskContainer extends React.Component {
     }
 
     render() {
-
         const {location} = this.props;
         let lct = location.pathname;
         return (
@@ -36,7 +35,7 @@ let mapStateToProps = (state) => {
     return {
         data: state.diskdata.data
     }
-}
+};
 
 let WithUrlDataContainerComponent = withRouter(DataDiskContainer);
 

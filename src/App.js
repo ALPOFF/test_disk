@@ -13,10 +13,7 @@ const App = ({location}) => {
                         <h3>Yandex Drive Files Viewer by GA TEAM</h3>
                     </Col>
                 </Row>
-
-                        <Route path="/:fldpath?" component={DataDiskContainer} key={location.pathname}/>
-
-
+                <Route path="/:fldpath?" component={DataDiskContainer} key={location.pathname}/>
             </Container>
         </div>
     );
